@@ -1,0 +1,24 @@
+<h2>Sales List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Sale Number</th>
+      <th>Date</th>
+      <th>Customer</th>
+      <th>Total Amount</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let sale of sales">
+      <td>{{ sale.saleNumber }}</td>
+      <td>{{ sale.saleDate | date }}</td>
+      <td>{{ sale.customerName }}</td>
+      <td>{{ sale.totalAmount | currency }}</td>
+      <td>
+        <button (click)="viewSale(sale.id)">View</button>
+        <button (click)="cancelSale(sale.id)">Cancel</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
